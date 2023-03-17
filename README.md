@@ -5,7 +5,6 @@ Font is a crucial design aspect, however, classifying fonts is challenging compa
 
 
 
-# Results
 ## Triplet Loss Overview
 <img src="images/triplet overview.png" width="425"/>
 
