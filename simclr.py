@@ -39,58 +39,10 @@ class SimCLR:
                         self.model.fc = torch.nn.Sequential(
                             *temp[:-len(temp)])
                         print("Top Layers removed")
-            # print("Adding new FC")
-            # classifier = nn.Sequential(OrderedDict([
-            #     ('fc1', nn.Linear(512, 1024)),
-            #     ('added_relu1', nn.ReLU(inplace=True)),
-            #     ('fc2', nn.Linear(1024, 512)),
-            #     ('added_relu2', nn.ReLU(inplace=True)),
-            #     # ('drop', nn.Dropout(p=0.5, inplace=False)),
-            #     ('fc3', nn.Linear(512, 52))
-            # ]))
-
-            #self.model.fc = classifier
-            # self.model.eval()
-            # for param in self.model.parameters():
-            #     param.requires_grad = False
-            # net = torch.jit.script(model)
-            # # model = torch.jit.freeze(net)
-            # self.model.fc.fc1.weight.requires_grad = True
-            # self.model.fc.fc1.bias.requires_grad = True
-            # self.model.fc.fc2.weight.requires_grad = True
-            # self.model.fc.fc2.bias.requires_grad = True
-            # self.model.fc.fc3.weight.requires_grad = True
-            # self.model.fc.fc3.bias.requires_grad = True
-
-            # for name, grad in self.model.named_parameters():
-            #     if grad.requires_grad:
-            #         print(f"name: {name}")
+        
         return self.model
 
-    def get_representations(self, args, mode):
-
-        self.model.eval()
-
-        res = {
-            'X': torch.FloatTensor(),
-            'Y': torch.LongTensor()
-        }
-
-        with torch.no_grad():
-            for batch, label in self.dataloaders[mode]:
-                x = batch.to(args.device)
-
-                # get their outputs
-                pred = self.model(x)
-
-                res['X'] = torch.cat((res['X'], pred.cpu()))
-                res['Y'] = torch.cat((res['Y'], label.cpu()))
-
-        res['X'] = np.array(res['X'])
-        res['Y'] = np.array(res['Y'])
-
-        return res
-
+  
     def train(self, args, num_epochs):
         '''
         trains self.model on the train dataset for num_epochs
