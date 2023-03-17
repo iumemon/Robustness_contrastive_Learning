@@ -5,10 +5,11 @@ Font is a crucial design aspect, however, classifying fonts is challenging compa
 
 # Results
 ## Triplet Loss Overview
-<img src="images/triplet overview" width="425"/>
+<img src="images/triplet overview.png" width="425"/>
 
 # Results
 ## t_SNE Projections
 <img src="images/t_SNE Projections.png" width="425"/>
+
 ## Similar Images
 <img src="images/similar images.png" width="425"/>
