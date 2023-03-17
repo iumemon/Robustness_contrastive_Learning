@@ -10,7 +10,7 @@ Font is a crucial design aspect, however, classifying fonts is challenging compa
 
 # Results
 ## t_SNE Projections
-<img src="images/t_SNE Projections.png" width="600"/>
+<img src="images/t_SNE Projections.png" width="700"/>
 
 ## Similar Images
-<img src="images/similar images.png" width="600"/>
+<img src="images/similar images.png" width="700"/>
