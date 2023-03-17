@@ -3,5 +3,5 @@ This repository contains the code for our experiments on evaluating the robustne
 
 
 ## Results
-#t_SNE Projections
+# t_SNE Projections
 <img src="images/t_SNE Projections.png" width="425"/>
